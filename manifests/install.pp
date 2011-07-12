@@ -1,6 +1,17 @@
 #configure augeas
 class augeas::install {
-		#package {$augeas_package:
-		#	ensure => present,
-		#}
+    package { "libaugeas0":
+        ensure => present,
+        alias => "augeas"
+        }
+
+    $aug_pkg = [
+            "augeas-lenses",
+            "augeas-tools",
+            "libaugeas-ruby"
+            ]
+
+    package { $aug_pkg:
+        ensure => installed,
+        }
 }
