@@ -12,6 +12,6 @@
 #
 # [Remember: No empty lines between comments and class definition]
 class augeas {
-		include augeas::params,augeas::install
+    include augeas::params,augeas::install
 
 }
